@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'groovy'
 }
 
 group 'programmers'
@@ -10,6 +11,7 @@ repositories {
 }
 
 dependencies {
+    testCompile "org.spockframework:spock-core:1.2-groovy-2.4"
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
     testImplementation('org.hamcrest:hamcrest-library:2.1')
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
