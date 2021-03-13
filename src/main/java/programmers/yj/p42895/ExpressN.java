@@ -22,14 +22,17 @@ public class ExpressN {
         var sets = new ArrayList<HashSet<Integer>>();
 
         for (int setIndex = 0; setIndex <= MAX_N_VALUE; setIndex++) {
-            HashSet<Integer> currentSet = initializeSet(N, setIndex);
+            var currentSet = initializeSet(N, setIndex);
             sets.add(currentSet);
 
-            for (int aIndex = 0; aIndex < setIndex; aIndex++) {
-                for (Integer a : sets.get(aIndex)) {
-                    int bIndex = setIndex - 1 - aIndex;
+            for (int indexA = 0; indexA < setIndex; indexA++) {
+                int indexB = setIndex - 1 - indexA;
 
-                    for (Integer b : sets.get(bIndex)) {
+                var previousSetA = sets.get(indexA);
+                var previousSetB = sets.get(indexB);
+
+                for (var a : previousSetA) {
+                    for (var b : previousSetB) {
                         currentSet.add(a + b);
                         currentSet.add(a - b);
                         currentSet.add(a * b);
