@@ -21,7 +21,7 @@ public class ExpressN {
     public int solution(int N, int number) {
         var sets = new ArrayList<HashSet<Integer>>();
 
-        for (int setIndex = 0; setIndex <= MAX_N_VALUE; setIndex++) {
+        for (int setIndex = 0; setIndex < MAX_N_VALUE; setIndex++) {
             var currentSet = initializeSet(N, setIndex);
             sets.add(currentSet);
 
@@ -37,9 +37,7 @@ public class ExpressN {
                         currentSet.add(a - b);
                         currentSet.add(a * b);
 
-                        if (b != 0) {
-                            currentSet.add(a / b);
-                        }
+                        if (b != 0) currentSet.add(a / b);
                     }
                 }
             }
