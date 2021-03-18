@@ -1,7 +1,7 @@
 plugins {
     id 'java'
     id 'groovy'
-    id 'org.jetbrains.kotlin.jvm' version '1.4.30'
+    id 'org.jetbrains.kotlin.jvm' version "$kotlinJvmVersion"
 }
 
 group 'programmers'
@@ -12,11 +12,11 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.spockframework:spock-core:1.2-groovy-2.4'
-    testCompile "org.spockframework:spock-core:1.2-groovy-2.4"
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
-    testImplementation('org.hamcrest:hamcrest-library:2.1')
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+    implementation "org.spockframework:spock-core:$spockVersion"
+    testCompile "org.spockframework:spock-core:$spockVersion"
+    testImplementation "org.junit.jupiter:junit-jupiter-api:$jupiterApiVersion"
+    testImplementation("org.hamcrest:hamcrest-library:$harcrestLibraryVersion")
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
 }
 
@@ -25,11 +25,11 @@ test {
 }
 compileKotlin {
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "$jvmTarget"
     }
 }
 compileTestKotlin {
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "$jvmTarget"
     }
 }
