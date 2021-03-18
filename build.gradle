@@ -12,7 +12,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.spockframework:spock-core'
+    implementation 'org.spockframework:spock-core:1.2-groovy-2.4'
     testCompile "org.spockframework:spock-core:1.2-groovy-2.4"
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
     testImplementation('org.hamcrest:hamcrest-library:2.1')
