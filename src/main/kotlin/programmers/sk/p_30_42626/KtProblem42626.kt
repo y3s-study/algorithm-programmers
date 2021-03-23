@@ -10,9 +10,8 @@ class KtProblem42626 {
         // initial priority queue
         val priorityQueue = PriorityQueue(Arrays.stream(scoville).boxed().collect(Collectors.toList()))
         // until smallest number is bigger than K or queue is empty
-        while (Boolean.TRUE) {
+        while (priorityQueue.peek() < K) {
             val smallest = priorityQueue.poll()
-            if (smallest >= K) return answer
             if (priorityQueue.isEmpty()) return -1
             priorityQueue.add(smallest + 2 * priorityQueue.poll())
             answer++
